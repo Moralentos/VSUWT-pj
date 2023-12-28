@@ -1,35 +1,58 @@
-package com.example.vsuwtproject
+fun main() {
+    // 1. Работа с преобразованием строк
+    val strLength = "Hello, World!".length
+    println("Длина строки: $strLength")
 
-import android.os.Bundle
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
-import com.example.vsuwtproject.databinding.ActivityMainBinding
+    // 2. Базовая арифметика и вывод результата в консоль
+    val a = 5
+    val b = 3
+    val sum = a + b
+    println("Сумма чисел $a и $b равна $sum")
 
-class MainActivity : AppCompatActivity() {
+    // 3. Примеры интерполяции строк
+    val name = "Андрей"
+    val age = 25
+    println("Привет, меня зовут $name и мне $age лет.")
 
-    private lateinit var binding: ActivityMainBinding
+    // 4. Преобразование типов
+    val numStr = "42"
+    val numInt = numStr.toInt()
+    println("Строка $numStr преобразована в число: $numInt")
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        val navView: BottomNavigationView = binding.navView
-
-        val navController = findNavController(R.id.nav_host_fragment_activity_main)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        val appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications
-            )
-        )
-        setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)
+    // 5. Пример условных операторов (if else)
+    val x = 10
+    val y = 20
+    if (x > y) {
+        println("$x больше $y")
+    } else {
+        println("$x меньше или равно $y")
     }
+
+    // 6. Пример циклов (for и while)
+    // Цикл for
+    for (i in 1..5) {
+        println("Итерация $i")
+    }
+
+    // Цикл while
+    var counter = 0
+    while (counter < 3) {
+        println("Counter: $counter")
+        counter++
+    }
+
+    // 7. Пример создания отдельной функции
+    greet("Андрей")
+
+    // 8. Пример работы с массивом
+    val numbers = arrayOf(1, 2, 3, 4, 5)
+    for (num in numbers) {
+        println("Число: $num")
+    }
+}
+
+
+
+fun greet(name: String) {
+    println("Привет, $name!")
 }
